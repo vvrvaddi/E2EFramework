@@ -1,0 +1,53 @@
+applications:
+  - application:
+      name: "TheraBill"
+      platform: "Desktop"
+      environment: "Test"
+      inputFolder: "\\TestCases"
+      resultFolder: "\\Results" 
+      uploadsFolder: "\\Uploads"
+      failedIterations : 1
+      dbURL : "jdbc:MySQL://127.0.0.1:3306/tbproviders"
+      dbUname : "therabill"
+      dbPassword : "G%xrmkfT422njD^s"
+      
+      
+      suites:
+         - suite:
+            seq : 1
+            name: "smoke1"   
+            run:  true
+            modules:  [Client,Staff,Help,Payments,Schedule,Billing,Provider,MUMPortal,WebPT]
+            baseUrl: "https://dev002.therabill.com/login/"            
+            browser: "Firefox"
+            browserDriverPath: "\\drivers\\geckodriver"
+         - suite:
+            seq : 1
+            name: "smoke2"   
+            run:  false
+            modules:  [Client,Staff,Help,Payments,Schedule,Billing,Provider,MUMPortal,WebPT]
+            baseUrl: "https://dev002.therabill.com/login/"            
+            browser: "Firefox"
+            browserDriverPath: "\\drivers\\geckodriver"
+         - suite:
+            seq : 1
+            name: "smoke3"   
+            run:  false
+            modules:  [Client,Staff,Help,Payments,Schedule,Billing,Provider,MUMPortal,WebPT]
+            baseUrl: "https://dev002.therabill.com/login/"            
+            browser: "Firefox"
+            browserDriverPath: "\\drivers\\geckodriver"
+         - suite:         
+            name: "P3"   
+            run:  false
+            modules:  []
+            baseUrl: "https://dev002.therabill.com/login/"            
+            browser: "Firefox"
+            browserDriverPath: "\\drivers\\geckodriver.exe"
+         - suite:
+            name: "P4"   
+            run:  false
+            modules:  [Billing,Client,Staff,Dashboard,Provider,Payments,Schedule]
+            baseUrl: "https://dev002.therabill.com/login/"            
+            browser: "Firefox"
+            browserDriverPath: "\\drivers\\geckodriver.exe"      
